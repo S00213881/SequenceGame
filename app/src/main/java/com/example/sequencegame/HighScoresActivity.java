@@ -1,6 +1,7 @@
 package com.example.sequencegame;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.IntentCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -39,10 +40,10 @@ public class HighScoresActivity extends AppCompatActivity {
 
         db.emptyHiScores(); // empty table, remove if you want to keep high scores
 
-        db.addHiScore(new HiScore("20 OCT 2020", "Frodo", 12));
-        db.addHiScore(new HiScore("28 OCT 2020", "Dobby", 8));
-        db.addHiScore(new HiScore("20 NOV 2020", "DarthV", 6));
-        db.addHiScore(new HiScore("20 NOV 2020", "Bob", 3));
+        db.addHiScore(new HiScore("20 OCT 2020", "Benen", 12));
+        db.addHiScore(new HiScore("28 OCT 2020", "Mark", 8));
+        db.addHiScore(new HiScore("20 NOV 2020", "John", 6));
+        db.addHiScore(new HiScore("20 NOV 2020", "Sarah", 3));
         db.addHiScore(new HiScore("22 NOV 2020", "Gemma", 2));
 
         if (score > 0)
@@ -67,5 +68,9 @@ public class HighScoresActivity extends AppCompatActivity {
 
     }
 
-    public void PressedMainMenu(View view) { finish();}
+    public void PressedMainMenu(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
 }

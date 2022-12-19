@@ -168,21 +168,25 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
 
     // uncomment if you want to use buttons to play
     public void PressedBlue(View view) {
+//        counter++;
 //        playerSequence[playerArrayIndex++] = BLUE;
 //        PlayGame();
     }
 
     public void PressedRed(View view) {
+//        counter++;
 //        playerSequence[playerArrayIndex++] = RED;
 //        PlayGame();
     }
 
     public void PressedGreen(View view) {
+//        counter++;
 //        playerSequence[playerArrayIndex++] = GREEN;
 //        PlayGame();
     }
 
     public void PressedYellow(View view) {
+//        counter++;
 //        playerSequence[playerArrayIndex++] = YELLOW;
 //        PlayGame();
     }
@@ -192,7 +196,7 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
         gameInPlay = false;
         if (Arrays.equals(gameSequence, playerSequence) == true)
         {
-            ct.start();
+            DisplaySequence();
         } else {
             int finalScore = 0;
 
@@ -239,8 +243,6 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
     private void oneButton() {
         n = getRandom(sequenceCount);
 
-        Toast.makeText(this, "Number = " + n, Toast.LENGTH_SHORT).show();
-
         switch (n) {
             case 1:
                 flashButton(bBlue);
@@ -285,10 +287,10 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
                         fb.setVisibility(View.INVISIBLE);
                     }
                 };
-                handler1.postDelayed(r1, 600);
+                handler1.postDelayed(r1, 1000);
 
             } // end runnable
         };
-        handler.postDelayed(r, 600);
+        handler.postDelayed(r, 500);
     }
 }
